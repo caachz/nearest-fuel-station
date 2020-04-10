@@ -1,0 +1,30 @@
+
+Station Information
+<ul class="name">
+Name: <%= @search_facade.station.name%><br>
+</ul>
+
+<ul class="address">
+Address: <%= @search_facade.station.address%><br>
+</ul>
+
+<ul class="fuel_type">
+Fuel Type: <%= @search_facade.station.fuel_type %><br>
+</ul>
+
+<ul class="access_times">
+Access Times: <%= @search_facade.station.access_times%><br>
+</ul>
+<ul class="distance">
+Distance To Station: <%=@search_facade.directions.distance%><br>
+</ul>
+
+<ul class="travel_time">
+Travel Time To Station: <%= @search_facade.directions.travel_time%><br>
+</ul>
+
+<ul class="directions">
+Directions:<br> <% @search_facade.directions.directions.each do |step|%>
+  <%= step[:html_instructions].html_safe %><br>
+<%end%><br>
+</ul>
